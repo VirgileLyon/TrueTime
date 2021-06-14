@@ -18,16 +18,16 @@ struct MyTimeView: View {
                 Text("Avez-vous pris du temps pour vous aujourd'hui?")
                 VStack{
                     HStack{
-                        Button("No time") {
+                        Button("No time 🙅‍♂️") {
                             showDetails.toggle()
                         }
-                        Button("5 Min") {
+                        Button("5 Min ☺️") {
                             showDetails.toggle()
                         }
-                        Button("15 Min") {
+                        Button("15 Min 🥳") {
                             showDetails.toggle()
                         }
-                        Button("30 Min") {
+                        Button("30 Min 🧘‍♂️") {
                             showDetails.toggle()
                         }
                     }
@@ -38,16 +38,16 @@ struct MyTimeView: View {
                 }
                 VStack{
                     HStack{
-                        Button("1 Hour") {
+                        Button("1 Hour 🌅") {
                             showDetails2.toggle()
                         }
-                        Button("2 Hour") {
+                        Button("2 Hour 🌄") {
                             showDetails2.toggle()
                         }
-                        Button("5 Hour") {
+                        Button("5 Hour 🔥") {
                             showDetails2.toggle()
                         }
-                        Button("All Day") {
+                        Button("All Day 🤯") {
                             showDetails2.toggle()
                         }
                     }
