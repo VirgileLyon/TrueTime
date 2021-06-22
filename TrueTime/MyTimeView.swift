@@ -11,15 +11,27 @@ struct MyTimeView: View {
     
     @State private var showDetails = false
     @State private var showDetails2 = false
+    @State var date = Date()
+    var timeFormat: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE d MMMM yyyy - HH:mm"
+        return formatter
+    }
+    func timeString(date: Date) -> String {
+         let time = timeFormat.string(from: date)
+         return time
+    }
     
     var body: some View {
         NavigationView {
             VStack {
+                Text("\(timeString(date: date))")
                 Text("Avez-vous pris du temps pour vous aujourd'hui?")
                     .font(.title)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .padding()
+                Text("Le temps pris POUR vous peut correspondre a plusieurs activités : Médiation, détente, accomplissement personnel...")
                 VStack{
                     HStack{
                         Button("No time") {
@@ -87,5 +99,6 @@ struct BlueButton: ButtonStyle {
 struct MyTimeView_Previews: PreviewProvider {
     static var previews: some View {
         MyTimeView()
+            .environment(\.locale, Locale(identifier: "fr"))
     }
 }
