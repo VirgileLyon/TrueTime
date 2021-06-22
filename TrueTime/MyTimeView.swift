@@ -19,21 +19,22 @@ struct MyTimeView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
+                    .padding()
                 VStack{
                     HStack{
-                        Button("No time 🙅‍♂️") {
+                        Button("No time") {
                             showDetails.toggle()
                         }
                         .buttonStyle(BlueButton())
-                        Button("5 Min ☺️") {
+                        Button("5 Min") {
                             showDetails.toggle()
                         }
                         .buttonStyle(BlueButton())
-                        Button("15 Min 🥳") {
+                        Button("15 Min") {
                             showDetails.toggle()
                         }
                         .buttonStyle(BlueButton())
-                        Button("30 Min 🧘‍♂️") {
+                        Button("30 Min") {
                             showDetails.toggle()
                         }
                         .buttonStyle(BlueButton())
@@ -45,19 +46,19 @@ struct MyTimeView: View {
                 }
                 VStack{
                     HStack{
-                        Button("1 Hour 🌅") {
+                        Button("1 Hour") {
                             showDetails2.toggle()
                         }
                         .buttonStyle(BlueButton())
-                        Button("2 Hour 🌄") {
+                        Button("2 Hour") {
                             showDetails2.toggle()
                         }
                         .buttonStyle(BlueButton())
-                        Button("5 Hour 🔥") {
+                        Button("5 Hour") {
                             showDetails2.toggle()
                         }
                         .buttonStyle(BlueButton())
-                        Button("All Day 🤯") {
+                        Button("All Day") {
                             showDetails2.toggle()
                         }
                         .buttonStyle(BlueButton())
