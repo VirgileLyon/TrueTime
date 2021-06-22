@@ -14,18 +14,25 @@ struct MyTimeView: View {
     @State var date = Date()
     var timeFormat: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE d MMMM yyyy - HH:mm"
+        formatter.dateFormat = "EEEE d MMMM yyyy - HH:mm:ss"
         return formatter
     }
     func timeString(date: Date) -> String {
          let time = timeFormat.string(from: date)
          return time
     }
+    var updateTimer: Timer {
+         Timer.scheduledTimer(withTimeInterval: 1, repeats: true,
+                              block: {_ in
+                                 self.date = Date()
+                               })
+    }
     
     var body: some View {
         NavigationView {
             VStack {
                 Text("\(timeString(date: date))")
+                     .onAppear(perform: {let _ = self.updateTimer})
                 Text("Avez-vous pris du temps pour vous aujourd'hui?")
                     .font(.title)
                     .fontWeight(.bold)
